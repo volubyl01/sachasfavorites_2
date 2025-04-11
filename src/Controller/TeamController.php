@@ -21,10 +21,10 @@ class TeamController extends AbstractController
 {
 
     private $backgroundImages = [
-        'team' => 'images/backgrounds/pokeball-pokemon-pngrepo-com.webp',
-        'show' => 'images/backgrounds/pokeball-pokemon-pngrepo-com.webp',
-        'add' => 'images/backgrounds/pokeball-pokemon-pngrepo-com.webp',
-        'index' => 'images/backgrounds/pokeball-pokemon-pngrepo-com.webp'
+        'team' => 'images/pokeball-pokemon-pngrepo-com.webp',
+        'show' => 'images/pokeball-pokemon-pngrepo-com.webp',
+        'add' => 'images/pokeball-pokemon-pngrepo-com.webp',
+        'index' => 'images/pokeball-pokemon-pngrepo-com.webp'
     ];
 
     public function __construct(private RequestStack $requestStack) {}

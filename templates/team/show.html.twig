@@ -5,17 +5,16 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Membres de l'équipe{{ team.name }}</h1>
+<h1>Membres de l'équipe{{ team.name }}</h1>
 
-	<h2>Pokémon dans l'équipe</h2>
-	<div class="pokemon-list">
-		{% for pokemon in team.pokemons %}
-			<div class="pokemon-item">
-				<img src="{{ pokemon.sprite }}" alt="{{ pokemon.name }}">
-				<p>{{ pokemon.name }}</p>
-			</div>
-		{% endfor %}
-	</div>
+<h2>Pokémon dans l'équipe</h2>
+<div class="pokemon-list">
+	{% for pokemon in team.pokemons %}
+		<div class="pokemon-item">
+			<img src="{{ pokemon.sprite }}" alt="{{ pokemon.name }}">
+			<p>{{ pokemon.name }}</p>
+		</div>
+	{% endfor %}
+</div>
 
-	<a href="{{ path('monpokemon_pokemon_index') }}" class="btn btn-primary">Ajouter un autre Pokémon</a>
-{% endblock %}
+<a

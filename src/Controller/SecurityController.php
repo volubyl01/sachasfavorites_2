@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
+
 class SecurityController extends AbstractController
 {
     private $backgroundImages = [
@@ -16,11 +17,12 @@ class SecurityController extends AbstractController
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
+        // Si l'utilisateur est déjà connecté, redirection
         if ($this->getUser()) {
-            return $this->redirectToRoute('app_home');
-        }
+            $user = $this->getUser();
+            return $this->redirectToRoute('pokemon_index');        }
 
-        // get the login error if there is one
+        // Gestion de l'erreur de login
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
@@ -36,5 +38,11 @@ class SecurityController extends AbstractController
     public function logout(): void
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+    }
+
+    #[Route('/login_check', name: 'app_login_check')]
+    public function loginCheck(): never
+    {
+        throw new \LogicException('Cette route est gérée par le firewall.');
     }
 }

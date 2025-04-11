@@ -5,17 +5,14 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Ajouter
+<h1>Ajouter
+	{{ pokemonName }}
+	à l'équipe</h1>
+<div class="pokemon-details">
+	<img src="{{ pokemonSprite }}" alt="{{ pokemonName }}">
+	<p>Voulez-vous vraiment ajouter
 		{{ pokemonName }}
-		à l'équipe</h1>
-	<div class="pokemon-details">
-		<img src="{{ pokemonSprite }}" alt="{{ pokemonName }}">
-		<p>Voulez-vous vraiment ajouter
-			{{ pokemonName }}
-			à votre équipe ?</p>
-		<form method="post" action="{{ path('app_team_add_pokemon', { name: pokemonName, sprite: pokemonSprite }) }}">
-			<button type="submit" class="btn btn-success">Confirmer</button>
-			<a href="{{ path('monpokemon_pokemon_index') }}" class="btn btn-secondary">Annuler</a>
-		</form>
-	</div>
-{% endblock %}
+		à votre équipe ?</p>
+	<form method="post" action="{{ path('app_team_add_pokemon', { name: pokemonName, sprite: pokemonSprite }) }}">
+		<button type="submit" class="btn btn-success">Confirmer</button>
+		<a

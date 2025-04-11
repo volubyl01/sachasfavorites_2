@@ -20,7 +20,7 @@ import '@symfony/stimulus-bridge';
 // import './styles/app.css';
 import '../styles/app.css';
 
-import '../js/app'
+import './app.js';
 
 
 // import { createApp } from 'vue';

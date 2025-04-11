@@ -22,7 +22,7 @@ use Symfony\Component\Form\Form;
 class PokemonController extends AbstractController
 {
 
-
+// Chargement dynamique des backgrounds
     private $backgroundImages = [
         'index' => 'images/backgrounds/pokemmo-pngrepo-com.webp',
         'new' => 'images/backgrounds/pokemmo-pngrepo-com.webp',
